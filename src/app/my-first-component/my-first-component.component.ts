@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import Status from './models/status';
-import Topology from './models/topology';
 import Property from './models/property';
+import { PropertyService } from '../property.service';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-my-first-component',
@@ -10,17 +10,18 @@ import Property from './models/property';
 })
 export class MyFirstComponentComponent implements OnInit {
   properties: Property[];
+  properties$: Observable<Property[]>;
   tableStyle: string = 'table table-striped';
   isDisabled: boolean = false;
   username: string;
 
+  constructor(private propertyService: PropertyService) {
+  }
+
   ngOnInit() {
-    this.properties = [
-      { title: 'Property 1', topology: Topology.T2, price: 650, createAt: new Date(), status: Status.PENDING },
-      { title: 'Property 1.1', topology: Topology.T2, price: 650, createAt: new Date(), status: Status.PENDING },
-      { title: 'Property 2', topology: Topology.T3, price: 650, createAt: new Date(), status: Status.PENDING },
-      { title: 'Property 3', topology: Topology.T4, price: 650, createAt: new Date(), status: Status.PENDING },
-    ]
+    this.propertyService.search().subscribe(props => {
+      this.properties = props;
+    })
   }
 
   clickMe() {
@@ -33,6 +34,10 @@ export class MyFirstComponentComponent implements OnInit {
 
   usernameChange(value) {
     console.log(`You are typing '${value}'...`);
+  }
+
+  goToLink(url) {
+    window.open(url, '_blank');
   }
 
 }

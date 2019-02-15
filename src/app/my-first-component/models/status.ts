@@ -5,4 +5,9 @@ enum Status {
   UNVAILABLE = 'Unvailable'
 }
 
+const getFromIndex = (index: string): Status => {
+  return Status[index];
+}
+
+export { getFromIndex };
 export default Status;

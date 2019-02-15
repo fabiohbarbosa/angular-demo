@@ -1,7 +1,12 @@
 enum Topology {
-  T2 = 't2',
-  T3 = 't3',
-  T4 = 't4'
+  t2 = 'T2',
+  t3 = 'T3',
+  t4 = 'T4'
 }
 
+const getFromIndex = (value: string): Topology => {
+  return Topology[value];
+}
+
+export { getFromIndex };
 export default Topology;

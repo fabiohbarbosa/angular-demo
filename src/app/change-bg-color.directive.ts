@@ -13,16 +13,15 @@ export class ChangeBgColorDirective {
   //   window.alert(`Hi master! I'm <${this.el.nativeElement.tagName.toLowerCase()}> element.`);
   // }
 
-  // @HostListener('mouseover') onMouseOver() {
-  //   this.over('#3F5E79', '#DDDCDC');
-  // }
+  @HostListener('mouseover') onMouseOver() {
+    this.over('#3F5E79', '#DDDCDC');
+  }
 
-  // @HostListener('mouseleave') onMouseLeave() {
-  //   this.leave();
-  // }
+  @HostListener('mouseleave') onMouseLeave() {
+    this.leave();
+  }
 
   constructor(private el: ElementRef, private renderer: Renderer2) {
-    this.color = 'yellow';
   }
 
   over(color: string, bgColor: string) {

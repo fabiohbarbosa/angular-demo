@@ -26,11 +26,11 @@
             </tr>
         </thead>
         <tbody>
-            <tr *ngFor="let p of properties">
+            <tr *ngFor="let p of properties" appChangeBgColor (click)="goToLink(p.url)">
                 <td>{{p.title}}</td>
                 <td>{{p.topology}}</td>
-                <td>{{p.price}}</td>
-                <td>{{p.createAt}}</td>
+                <td>{{p.price | price}}</td>
+                <td>{{p.createAt | date: 'MM/dd/yy hh:mm'}}</td>
                 <td>{{p.status}}</td>
             </tr>
         </tbody>
