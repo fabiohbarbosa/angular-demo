@@ -1,7 +1,7 @@
 <section>
     <div class="buttons-group">
         <div class="buttons-group-item">
-            <button type="button" (click)="clickMe()" class="btn btn-primary">Click me!</button>
+            <button type="button" (click)="clickMe()" class="btn btn-primary active">Click me!</button>
         </div>
         <div class="buttons-group-item">
             <button type="button" [disabled]="isDisabled" (click)="disableMe()" class="btn"
@@ -29,7 +29,7 @@
             <tr *ngFor="let p of properties">
                 <td>{{p.title}}</td>
                 <td>{{p.topology}}</td>
-                <td>{{p.price | price}}</td>
+                <td>{{p.price}}</td>
                 <td>{{p.createAt}}</td>
                 <td>{{p.status}}</td>
             </tr>

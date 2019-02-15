@@ -6,11 +6,13 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MyFirstComponentComponent } from './my-first-component/my-first-component.component';
 import { AppCommonsModule } from './app-commons/app-commons.module';
+import { ChangeBgColorDirective } from './change-bg-color.directive';
 
 @NgModule({
   declarations: [
     AppComponent,
-    MyFirstComponentComponent
+    MyFirstComponentComponent,
+    ChangeBgColorDirective
   ],
   imports: [
     AppCommonsModule,
