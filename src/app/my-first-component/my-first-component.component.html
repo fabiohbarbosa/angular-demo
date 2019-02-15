@@ -1,0 +1,40 @@
+<section>
+    <div class="buttons-group">
+        <div class="buttons-group-item">
+            <button type="button" (click)="clickMe()" class="btn btn-primary">Click me!</button>
+        </div>
+        <div class="buttons-group-item">
+            <button type="button" [disabled]="isDisabled" (click)="disableMe()" class="btn"
+                [ngClass]="{ 'btn-secondary': !isDisabled, 'btn-light': isDisabled  }">Disable me</button>
+        </div>
+    </div>
+
+    <div>
+        <input [(ngModel)]="username" (ngModelChange)="usernameChange($event)" />
+        &nbsp;<span *ngIf="username">Hello {{username}}!</span>
+    </div>
+
+
+    <table [class]="tableStyle">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col">Title</th>
+                <th scope="col">Topology</th>
+                <th scope="col">Price</th>
+                <th scope="col">Create At</th>
+                <th scope="col">Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let p of properties">
+                <td>{{p.title}}</td>
+                <td>{{p.topology}}</td>
+                <td>{{p.price | price}}</td>
+                <td>{{p.createAt}}</td>
+                <td>{{p.status}}</td>
+            </tr>
+        </tbody>
+    </table>
+
+
+</section>
