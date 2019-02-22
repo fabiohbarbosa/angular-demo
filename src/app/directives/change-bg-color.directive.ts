@@ -5,16 +5,10 @@ import { Directive, ElementRef, Renderer2, HostBinding, HostListener } from '@an
 })
 export class ChangeBgColorDirective {
 
-  // Allow to set a property in host element
   @HostBinding('style.background-color') color: string;
 
-  // Allow to handle events from host
-  // @HostListener('click') onClick() {
-  //   window.alert(`Hi master! I'm <${this.el.nativeElement.tagName.toLowerCase()}> element.`);
-  // }
-
   @HostListener('mouseover') onMouseOver() {
-    this.over('#3F5E79', '#DDDCDC');
+    this.over('#000', '#dddcdc');
   }
 
   @HostListener('mouseleave') onMouseLeave() {

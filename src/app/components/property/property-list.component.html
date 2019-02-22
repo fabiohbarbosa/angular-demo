@@ -1,0 +1,22 @@
+<section>
+    <table class="table table-striped" *ngIf="isLoaded">
+        <thead>
+            <tr>
+                <th scope="col">Title</th>
+                <th scope="col">Topology</th>
+                <th scope="col">Price</th>
+                <th scope="col">Create At</th>
+                <th scope="col">Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let p of properties$ | async" appChangeBgColor (click)="goToLink(p.url)">
+                <td>{{p.title}}</td>
+                <td>{{p.topology}}</td>
+                <td>{{p.price | price}}</td>
+                <td>{{p.createAt | date: 'MM/dd/yy hh:mm'}}</td>
+                <td>{{p.status}}</td>
+            </tr>
+        </tbody>
+    </table>
+</section>

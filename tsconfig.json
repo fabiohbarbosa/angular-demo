@@ -17,6 +17,23 @@
     "lib": [
       "es2018",
       "dom"
-    ]
+    ],
+    "paths": {
+      "@components/*": [
+        "src/app/components/*"
+      ],
+      "@directives/*": [
+        "src/app/directives/*"
+      ],
+      "@listeners/*": [
+        "src/app/listeners/*"
+      ],
+      "@pipes/*": [
+        "src/app/pipes/*"
+      ],
+      "@providers/*": [
+        "src/app/providers/*"
+      ],
+    }
   }
 }

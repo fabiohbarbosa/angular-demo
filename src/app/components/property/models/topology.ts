@@ -4,8 +4,8 @@ enum Topology {
   t4 = 'T4'
 }
 
-const getFromIndex = (value: string): Topology => {
-  return Topology[value];
+const getFromIndex = (index: string): Topology => {
+  return Topology[index];
 }
 
 export { getFromIndex };
