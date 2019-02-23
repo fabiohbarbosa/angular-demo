@@ -9,7 +9,7 @@ export class HttpClientInterceptor implements HttpInterceptor {
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
     const request = req.clone({
       setHeaders: {
-        Authorization: `Bearer ashdiuadihdiuhasiudhaisuhdiuas`
+        'CustomHeader': 'Hey Interceptor'
       }
     });
     return next.handle(request);
